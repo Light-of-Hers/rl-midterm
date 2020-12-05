@@ -15,27 +15,19 @@ optional arguments:
                         max episodes
 ```
 
+例如：
+
+```shell
+python3 ./run_agent.py -m MoveToBeacon -r -e 10
+```
+
+```shell
+python3 ./run_agent.py -m FindAndDefeatZerglings
+```
+
 
 
 ## Rule Based Agent
-
-### 使用示例
-
-在项目的根目录：
-
-```shell
-python3 -m pysc2.bin.agent --agent ruled_agent.MoveBeacon --map MoveToBeacon --use_feature_units
-```
-
-或者直接用已有脚本：
-
-```shell
-./run_agent MoveToBeacon
-```
-
-注：这些agent要用到SC2Env的`feature_units`（本质上可以由`feature_screen`推出），因此使用时需要启用该选项。
-
-
 
 ### 组件设计
 
