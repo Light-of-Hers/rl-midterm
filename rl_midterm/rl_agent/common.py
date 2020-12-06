@@ -63,10 +63,9 @@ class RLAgent(FeatureUnitAgent):
         super().reset()
         self.steps = 0
         self.init_act_flag = [0, 0]
-        # if self.episodes == 20:
-        #     np.set_printoptions(suppress=True)
-
-    #     np.savetxt(self.file_name, self.q_table, fmt="%.2f")
+        if self.episodes == 40:
+            np.set_printoptions(suppress=True)
+            np.savetxt(self.file_name, self.q_table, fmt="%.2f")
 
     def digitize_state(self, obs):
         digitized = 0
@@ -86,8 +85,8 @@ class RLAgent(FeatureUnitAgent):
             self.init_act_flag[1] = 1
             return FUNCTIONS.select_army("select")
         self.curr_state = self.digitize_state(obs)
-        # if self.prev_state != -1:
-        #    self.update_q_table(obs)
+        if self.prev_state != -1:
+            self.update_q_table(obs)
         self.action = self.decide_action()
         self.prev_state = self.curr_state
         return self.actions[self.action](obs)

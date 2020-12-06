@@ -24,7 +24,7 @@ def main(prefix):
         "--max_episodes", args.episodes
     ]
 
-    os.system(' '.join(map(str, cmd)))
+    os.system(' '.join(str(c) for c in cmd))
 
 
 if __name__ == '__main__':
